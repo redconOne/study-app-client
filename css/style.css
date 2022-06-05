@@ -1,0 +1,136 @@
+:root {
+  --clr-background: #3d343e;
+  --clr-white: #cdd6db;
+  --clr-gold: #d88d00;
+  --clr-keppel: #34a99a;
+  --clr-orange: #ed9a76;
+  --clr-silver: #b3b6c0;
+  --max-width: 700px;
+}
+
+body {
+  background-color: var(--clr-background);
+  /* max-width: var(--max-width); */
+  font-family: 'Fredoka', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  color: var(--clr-white);
+  font-size: 3rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+#subtitle {
+  color: var(--clr-white);
+  font-family: 'Allura', cursive;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#titleContainer {
+  text-align: center;
+}
+
+#myLink {
+  color: var(--clr-keppel);
+  text-decoration: none;
+}
+
+#myLink:hover {
+  color: var(--clr-gold);
+}
+
+#main {
+  padding-top: 2rem;
+  position: relative;
+  width: 1000px;
+  margin: 200px auto;
+  display: block;
+}
+
+.instructions {
+  color: var(--clr-white);
+  font-size: 2rem;
+  text-align: left;
+}
+
+.label {
+  color: var(--clr-keppel);
+  font-size: 2.25rem;
+  text-align: left;
+}
+
+.card-wrapper {
+  width: 500px;
+  height: 300px;
+  perspective: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card {
+  transition: 1s cubic-bezier(0.69, -0.55, 0.35, 1);
+  transform-style: preserve-3d;
+  position: relative;
+  left: 0;
+  background-color: var(--clr-background);
+  border: none;
+}
+
+.card.click {
+  transform: rotateY(180deg);
+  transform-origin: left;
+  left: 500px;
+}
+
+.flip {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flash-card {
+  width: 460px;
+  height: 250px;
+  /* padding: 75px 20px; */
+  border: 1px solid #000;
+  background: var(--clr-white);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front .back {
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+.back {
+  transform: rotateY(180deg);
+}
+h2 {
+  text-align: center;
+}
+h6 {
+  text-align: center;
+  padding: 0 50px;
+}
