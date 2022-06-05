@@ -52,7 +52,7 @@ function populate() {
 
 async function carAPIRequest() {
   const response = await fetch(
-    'http://study-api-100Devs.herokuapp.com/API/car/all'
+    'https://study-api-100Devs.herokuapp.com/API/car/all'
   );
   const data = await response.json();
   console.log(data);
