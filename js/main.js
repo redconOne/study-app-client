@@ -88,7 +88,7 @@ async function htmlAPIRequest() {
   answers = answers.reverse();
   populate();
 }
-async function cssrAPIRequest() {
+async function cssAPIRequest() {
   const response = await fetch(
     'https://study-api-100Devs.herokuapp.com/API/css/all'
   );

@@ -134,3 +134,7 @@ h6 {
   text-align: center;
   padding: 0 50px;
 }
+
+.btn {
+  margin: 0 0.3rem;
+}
