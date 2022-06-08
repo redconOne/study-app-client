@@ -3,6 +3,10 @@ let answers = [];
 let main = document.getElementById('main');
 let behavioralButton = document.getElementById('behavioralButton');
 behavioralButton.addEventListener('click', carAPIRequest);
+let htmlButton = document.getElementById('htmlButton');
+htmlButton.addEventListener('click', htmlAPIRequest);
+let cssButton = document.getElementById('cssButton');
+cssButton.addEventListener('click', cssAPIRequest);
 
 function populate() {
   for (let i = 0; i < questions.length; i++) {
@@ -53,6 +57,40 @@ function populate() {
 async function carAPIRequest() {
   const response = await fetch(
     'https://study-api-100Devs.herokuapp.com/API/car/all'
+  );
+  const data = await response.json();
+  console.log(data);
+  for (let item in data) {
+    questions.push(data[item].question);
+    answers.push(data[item].answer);
+  }
+  questions.pop();
+  answers.pop();
+
+  questions = questions.reverse();
+  answers = answers.reverse();
+  populate();
+}
+async function htmlAPIRequest() {
+  const response = await fetch(
+    'https://study-api-100Devs.herokuapp.com/API/html/all'
+  );
+  const data = await response.json();
+  console.log(data);
+  for (let item in data) {
+    questions.push(data[item].question);
+    answers.push(data[item].answer);
+  }
+  questions.pop();
+  answers.pop();
+
+  questions = questions.reverse();
+  answers = answers.reverse();
+  populate();
+}
+async function cssrAPIRequest() {
+  const response = await fetch(
+    'https://study-api-100Devs.herokuapp.com/API/css/all'
   );
   const data = await response.json();
   console.log(data);
